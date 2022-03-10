@@ -1,0 +1,23 @@
+@use '../../Styles/variables';
+
+
+.hsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid variables.$primary;
+    width: 500px;
+    height: 400px;
+
+    .hsHead {
+        height: 50px;
+    }
+
+    .hsBody {
+        display: flex;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+    }
+}

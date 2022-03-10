@@ -1,0 +1,59 @@
+@use '../../Styles/variables';
+
+.navContainer {
+    background-color: variables.$primary;
+    color: variables.$background;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-end;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+
+    .navLogo {
+        font-weight: bold;
+        cursor: pointer;
+
+        .nLogo {
+            text-decoration: none;
+            color: variables.$background;
+            font-size: 36px;
+        }
+    }
+
+    .navLinks > ul {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+
+        .navLink {
+            border-bottom: 8px solid variables.$primary;
+        }
+
+        .navLink:hover {
+            animation: slowUp 0.2s ease-in forwards;
+        }
+
+        .nLink {
+            text-decoration: none;
+            color: variables.$background;
+        }
+
+    }
+
+}
+
+
+@keyframes slowUp {
+    from {
+        border-bottom: 0px solid variables.$background;
+    }
+
+    to {
+        border-bottom: 8px solid variables.$background;
+    }
+}
