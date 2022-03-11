@@ -2,9 +2,61 @@
 
 
 .productContainer {
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 3em;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex-wrap:wrap;
+    gap: 2em;
+}
+
+
+.card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    width: 400px;
+    height: fit-content;
+    border: 5px solid variables.$thirdary;
+
+    .cardHead {
+        text-align: center;
+        border-bottom: 5px solid variables.$primary;
+    }
+
+    .cardImage {
+        padding-top: 15px;
+        text-align: center;
+
+        .cImage {
+            height: 150px;
+            width: 150px;
+        }
+    }
+
+    .cardBody {
+        display: flex;
+        height: 150px;
+        padding: 0 2em 0 2em;
+        align-items: center;
+        border-bottom: 5px solid variables.$primary;
+    }
+
+    .cardFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        
+        .add2cart {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .add2cart:hover {
+            color: blue;
+        }
+    }
 }
