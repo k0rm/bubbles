@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getSingleProduct } from '../../Actions/productAction';
 import './styles.scss';
 
+
 import ViewProduct from '../../Components/ViewProduct/ViewProduct';
 
 const Product = () => {
@@ -23,6 +24,7 @@ const Product = () => {
             />
         </div>
     )
-}
+};
+
 
 export default Product;

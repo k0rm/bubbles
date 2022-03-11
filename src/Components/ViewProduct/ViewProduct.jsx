@@ -23,7 +23,7 @@ const ViewProduct = ({ product }) => {
                 </div>
             </div>
             <div className="vpO">
-                <div className="addToCart" onClick={dispatch(addToCart({product}))}>
+                <div className="addToCart" onClick={() => dispatch(addToCart(product))}>
                     Add To Cart
                 </div>
             </div>

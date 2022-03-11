@@ -21,11 +21,11 @@ const Products = () => {
             <div className="productsContainer">
             {products.map((item) => {
                 return(
-                    <div className="card">
+                    <div className="card" key={item.id}>
                         <div className="cardHead">
                             {item.name}
                         </div>
-                        <Link 
+                        <Link
                             className='linky'
                             to={`/products/${item.id}`}
                         >

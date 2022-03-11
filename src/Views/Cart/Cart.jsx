@@ -1,18 +1,31 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './styles.scss';
+// import { connect } from 'react-redux';
 
 const Cart = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
+    const cart = useSelector((state) => state.cart);
 
-    useEffect(() => {
-        
-    }, [dispatch])
+    console.log(cart.cart);
     return (
-        <div>
-            <h3>CART</h3>
+        <div className='cartContainer'>
+        {cart.cart.map((item) => {
+            return (
+                <div className="cartItem" key={item.id}>
+                    <div className="cartImg">
+                        <img src={item.image} alt={item.name} className="cI" />
+                    </div>
+                    <div className="cartName">
+                        {item.name}
+                    </div>
+                    <div className="cartPrice">
+                        {item.price}
+                    </div>
+                </div>
+            )
+        })}
         </div>
-    )
-}
-
+        )
+    }
 export default Cart;
