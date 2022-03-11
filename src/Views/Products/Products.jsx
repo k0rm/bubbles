@@ -1,37 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProducts } from '../../Actions/productAction';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-// import ProductCard from '../../Components/ProductCard/ProductCard';
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    const [ready, setReady] = useState(false);
+    const dispatch = useDispatch();
+    const products = useSelector((state) => state.products);
+
 
     useEffect(() => {
-        fetch("http://localhost:3500/api/bubbles")
-            .then((res) => res.json())
-            .then((json) => {
-                setProducts(json);
-                setReady(true);
-            })
+        dispatch(getAllProducts());
         
-    }, []);
+    }, [dispatch]);
 
-    return (
-        <div className="productContainer">
+    if (products.length > 1) {
+        return (
+            <div className="productsContainer">
             {products.map((item) => {
                 return(
                     <div className="card">
                         <div className="cardHead">
                             {item.name}
                         </div>
-                        <div className="cardImage">
-                            <img className='cImage' src={item.image} alt="bubble" />
-                        </div>
-                        <div className="cardBody">
-                            {item.description}
-                        </div>
+                        <Link 
+                            className='linky'
+                            to={`/products/${item.id}`}
+                        >
+                            <div className="cardImage">
+                                <img className='cImage' src={item.image} alt="bubble" />
+                            </div>
+                            <div className="cardBody">
+                                {item.description}
+                            </div>
+                        </Link>
                         <div className="cardFooter">
                             ${item.price}
                             <AiOutlineShoppingCart className='add2cart' />
@@ -41,30 +45,14 @@ const Products = () => {
             })}
         </div>
     )
+} else {
+    return (
+        <div className="productsContiner">
+            <h3>HERLO</h3>
+        </div>
+    )
+}
 
-    // if (ready === true) {
-    //     return (
-    //         <div className="productContainer">
-    //             {products.map((item) => {
-    //                 return (
-    //                 <ProductCard 
-    //                     key={item.id}
-    //                     name={item.name}
-    //                     description={item.description}
-    //                     image={item.image}
-    //                     price={item.price}
-    //                 />
-    //                 )
-    //             })}
-    //         </div>
-    //     )
-    // } else {
-    //     return (
-    //         <div className="productContainer">
-    //             <h2>LOADING</h2>
-    //         </div>
-    //     )
-    // }
 
 }
 

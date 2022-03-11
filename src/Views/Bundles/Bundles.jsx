@@ -1,24 +1,37 @@
 import React, { useEffect, useState} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllBundles } from '../../Actions/bundleAction';
 import './styles.scss';
 
 const Bundles = () => {
-    const [Bundles, setBundles] = useState([]);
-    const [Ready, setReady] = useState(false);
+    const dispatch = useDispatch();
+    const bundles = useSelector((state) => state.bundles);
+
+    bundles.forEach((item) => {
+        console.log(item);
+    })
 
     useEffect(() => {
-        fetch("http://localhost:3500/api/bundles")
-            .then((res) => res.json())
-            .then((json) => {
-                setBundles(json);
-                setReady(true);
-            })
-    }, []);
+        dispatch(getAllBundles());
+    }, [dispatch]);
 
-   return (
-       <div className='bundleContainer'>
-           <h3>Bundles</h3>
-       </div>
-   )
+   if (bundles.length > 1) {
+       return (
+           <div className="bundleContainer">
+               <h3>
+                   herlOooo
+               </h3>
+           </div>
+       )
+   } else {
+       return (
+           <div className="bundleContainer">
+               <h3>
+                   SMErlrororo
+               </h3>
+           </div>
+       )
+   }
 }
 
 export default Bundles;

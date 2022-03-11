@@ -1,0 +1,57 @@
+@use './../../Styles/variables';
+
+
+.vpC {
+    display: flex;
+    flex-direction: column;
+    // height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .vpH {
+        font-size: 2.5rem;
+        color: variables.$primary;
+        font-weight: bold;
+    }
+
+    .vpIm {
+
+        .vpIi {
+
+        }
+    }
+
+    .vpB {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .vpF {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+
+.vpO {
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    .addToCart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 150px;
+        background-color: lime;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    .addToCart:hover {
+        background-color: red;
+    }
+}

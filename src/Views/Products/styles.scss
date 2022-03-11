@@ -1,7 +1,7 @@
 @use "../../Styles/variables";
 
 
-.productContainer {
+.productsContainer {
     justify-content: center;
     padding-top: 100px;
     padding-bottom: 3em;
@@ -48,6 +48,7 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        font-weight: bold;
 
         
         .add2cart {
@@ -59,4 +60,10 @@
             color: blue;
         }
     }
+}
+
+.linky {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
