@@ -1,31 +1,35 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { adjustCart } from '../../Actions/cartAction';
 import './styles.scss';
-// import { connect } from 'react-redux';
+
+import CartView from '../../Components/CartView/CartView';
 
 const Cart = () => {
-    // const dispatch = useDispatch();
-    const cart = useSelector((state) => state.cart);
+    const [cart, setCart] = useState([]);
+    
+    useEffect(() => {
+        setCart(JSON.parse(localStorage.getItem('cart')));
+    }, [cart])
 
-    console.log(cart.cart);
-    return (
-        <div className='cartContainer'>
-        {cart.cart.map((item) => {
-            return (
-                <div className="cartItem" key={item.id}>
-                    <div className="cartImg">
-                        <img src={item.image} alt={item.name} className="cI" />
-                    </div>
-                    <div className="cartName">
-                        {item.name}
-                    </div>
-                    <div className="cartPrice">
-                        {item.price}
-                    </div>
-                </div>
-            )
-        })}
-        </div>
+    if (cart.length > 0) {
+        return (
+            <div className='cartContainer'>
+                {cart.map((item) => {
+                    return (
+                        <CartView
+                            item={item}
+                        />
+                    )
+                })}
+            </div>
         )
-    }
+    } else {
+        return (
+            <div className="cartContainer">
+            <h3>Hello</h3>
+        </div>
+    )
+}
+}
 export default Cart;
