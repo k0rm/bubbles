@@ -1,0 +1,41 @@
+@use '../../Styles/variables';
+
+.bundleCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 500px;
+    background-color: variables.$primary;
+    border-radius: 14px;
+    padding: 2em;
+        
+    .bundleName {
+        font-weight: bold;
+        font-size: 2em;
+    }
+    
+    .bundleTotal {
+        font-weight: bold;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+    
+    .bundleItemBox {
+        cursor: pointer;
+        border: 3px solid white;
+        border-radius: 6px;
+        padding: 1em;
+    }
+    
+    .bundleAdd {
+        @include variables.defaultButton;
+        
+    }
+    
+    .bundleAdd:hover {
+        background-color: variables.$hoverGreen;
+    }
+        
+}

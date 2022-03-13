@@ -1,11 +1,12 @@
 import React from 'react';
-import './styles.scss';
+
+import AboutSection from '../../Components/AboutSection/AboutSection';
 
 const AboutUs = () => {
     
     return (
         <div>
-            <h3>About Us</h3>
+            <AboutSection />
         </div>
     )
 }

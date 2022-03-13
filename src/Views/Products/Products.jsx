@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './styles.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../../Actions/productAction';
+import { addToCart } from '../../Actions/cartAction';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 
@@ -38,7 +39,7 @@ const Products = () => {
                         </Link>
                         <div className="cardFooter">
                             ${item.price}
-                            <AiOutlineShoppingCart className='add2cart' />
+                            <AiOutlineShoppingCart className='add2cart' onClick={() => dispatch(addToCart(item))} />
                         </div>
                     </div>
                 )

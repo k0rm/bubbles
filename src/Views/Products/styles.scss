@@ -21,8 +21,13 @@
     border: 5px solid variables.$thirdary;
 
     .cardHead {
+        font-weight: bold;
         text-align: center;
-        border-bottom: 5px solid variables.$primary;
+        font-size: 20px;
+        color: white;
+        background-color: variables.$primary;
+        border-bottom: 5px solid variables.$thirdary;
+        padding: 10px;
     }
 
     .cardImage {
@@ -40,11 +45,16 @@
         height: 150px;
         padding: 0 2em 0 2em;
         align-items: center;
-        border-bottom: 5px solid variables.$primary;
+        border-bottom: 5px solid variables.$thirdary;
     }
 
     .cardFooter {
         display: flex;
+        background-color: variables.$primary;
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        letter-spacing: 1px;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
@@ -53,11 +63,14 @@
         
         .add2cart {
             cursor: pointer;
-            font-size: 20px;
+            font-size: 28px;
+            padding: 10px;
         }
 
         .add2cart:hover {
-            color: blue;
+            color: variables.$primary;
+            background-color: white;
+            border-radius: 50%;
         }
     }
 }

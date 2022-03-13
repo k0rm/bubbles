@@ -3,13 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllBundles } from '../../Actions/bundleAction';
 import './styles.scss';
 
+import BundleCard from '../../Components/BundleCard/BundleCard';
+
 const Bundles = () => {
     const dispatch = useDispatch();
     const bundles = useSelector((state) => state.bundles);
-
-    bundles.forEach((item) => {
-        console.log(item);
-    })
 
     useEffect(() => {
         dispatch(getAllBundles());
@@ -18,9 +16,16 @@ const Bundles = () => {
    if (bundles.length > 1) {
        return (
            <div className="bundleContainer">
-               <h3>
-                   herlOooo
-               </h3>
+               {bundles.map((bundle) => {
+                    return (
+                        <BundleCard
+                            key={bundle.id}
+                            id={bundle.id}
+                            items={bundle.items}
+                            name={bundle.name}
+                        />
+                    )
+               })}
            </div>
        )
    } else {

@@ -2,3 +2,19 @@ $primary: #a0c4ff;
 $secondary: #9bf6ff;
 $thirdary: #bdb2ff;
 $background: #fffffc;
+$buttonGreen: #70FF70;
+$hoverGreen: #86d58d;
+
+
+@mixin defaultButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+    color: white;
+    background-color: $buttonGreen;
+}

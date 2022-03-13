@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.scss';
+import logo from '../../resources/LogoMakr-30Bwjz.png';
 
 import {NavLink} from 'react-router-dom';
 
@@ -9,9 +10,9 @@ const Navbar = () => {
     return (
         <div className="navContainer">
             <div className="navLogo">
-                <h3>
-                    <NavLink className="nLogo"  to="/">BUBBLES</NavLink>
-                </h3>
+                <NavLink className="nLogo"  to="/">
+                    <img src={logo} alt="jawohl" className="navLogoImage" />
+                </NavLink>
             </div>
 
             <div className="navLinks">

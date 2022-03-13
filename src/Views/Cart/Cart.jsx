@@ -1,27 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { adjustCart } from '../../Actions/cartAction';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCart } from '../../Actions/cartAction';
 import './styles.scss';
 
 import CartView from '../../Components/CartView/CartView';
+import CartOptions from '../../Components/CartOptions/CartOptions';
 
 const Cart = () => {
-    const [cart, setCart] = useState([]);
-    
-    useEffect(() => {
-        setCart(JSON.parse(localStorage.getItem('cart')));
-    }, [cart])
+    const dispatch = useDispatch();
+    const cart = useSelector((state) => state.cart);
 
-    if (cart.length > 0) {
+    useEffect(() => {
+        dispatch(getCart());
+
+    }, [dispatch]);
+
+    if (cart.cart.length > 0) {
         return (
             <div className='cartContainer'>
-                {cart.map((item) => {
+                {cart.cart.map((item) => {
                     return (
                         <CartView
-                            item={item}
+                            key={item.id}
+                            id={item.id}
+                            name={item.name}
+                            image={item.image}
+                            description={item.description}
+                            price={item.price}
+                            qty={item.qty}
                         />
                     )
                 })}
+                <CartOptions />
             </div>
         )
     } else {

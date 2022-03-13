@@ -1,0 +1,36 @@
+@use '../../Styles/variables';
+
+.bundleItemsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 400px;
+    justify-content: space-evenly;
+
+    .bundleLinky {
+        display: flex;
+        width: 400px;
+        justify-content: space-around;
+        text-decoration: none;
+        color: white;
+
+    }
+
+    .bItemName {
+        font-weight: bold;
+    }
+
+    .bItemImage {
+        height: 50px;
+        width: 50px;
+        
+        .bIi {
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+    .bItemPrice {
+        font-weight: bold;
+    }
+}

@@ -4,3 +4,4 @@ export const GET_BUNDLES = "GET_BUNDLES";
 export const ADD_CART = "ADD_CART";
 export const GET_CART = "GET_CART";
 export const ADJUST_CART = "ADJUST_CART";
+export const EMPTY_CART = "EMPTY_CART";

@@ -1,4 +1,4 @@
-import { ADD_CART } from "../Constants";
+import { ADD_CART, EMPTY_CART } from "../Constants";
 import { GET_CART } from "../Constants";
 import { ADJUST_CART } from "../Constants";
 
@@ -10,17 +10,31 @@ export const addToCart = (state) => {
 };
 
 export const getCart = () => {
-        const res = localStorage.getItem('cart');
-        // localStorage.setItem('cart', res);
+    try {
+        const res = JSON.parse(localStorage.getItem('cart'));
         return {
             type: GET_CART,
             payload: res,
         }
+    } catch (error) {
+        const res = [];
+        return {
+            type: GET_CART,
+            payload: res,
+        }       
+    }
 };
 
-export const adjustCart = (item, operator) => {
+export const adjustCart = (id, operator) => {
     return {
         type: ADJUST_CART,
-        payload: [item, operator],
+        payload: [id, operator],
+    }
+}
+
+export const emptyCart = () => {
+    return {
+        type: EMPTY_CART,
+        payload: null,
     }
 }

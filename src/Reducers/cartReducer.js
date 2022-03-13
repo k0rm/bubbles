@@ -1,6 +1,7 @@
 import { ADD_CART } from "../Constants";
 import { GET_CART } from "../Constants";
 import { ADJUST_CART } from "../Constants";
+import { EMPTY_CART } from "../Constants";
 
 const INITIAL_STATE = {
     cart: [], // ID,DESC,IMG,PRICE,QTY
@@ -12,11 +13,12 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             let pload = 
                 {"id": action.payload.id, "name": action.payload.name, "description": action.payload.description, 
                 "image": action.payload.image, "price": action.payload.price, "qty": 1};
-            let contains = state.cart.length > 0 ?
+            console.log(state);
+            try {
+            let contains = (state.cart).length > 0 ?
                 state.cart.map((item) => item.id === action.payload.id ? true : false)
                 :
                 false
-            console.log(contains);
             state.cart = contains[contains.length-1]
                 ?
                 state.cart.map((item) => item.id === action.payload.id 
@@ -26,18 +28,24 @@ export default function cartReducer(state = INITIAL_STATE, action) {
                     item)
                 :
                 [...state.cart, pload];
+            } catch (error) {
+                return {
+                    ...state, cart: [],
+                }
+            }
             console.log("ADDING TO LOCAL");
             localStorage.setItem('cart', JSON.stringify(state.cart));
             return {
                 ...state, cart: [...state.cart],
             };
         case GET_CART:
-            console.log("GETTING LOCAL");
-            return JSON.parse(action.payload);
+            state.cart = action.payload;
+            return {
+                ...state, cart: [...state.cart],
+            };
         case ADJUST_CART:
-            console.log(action.payload[1]);
             state.cart = state.cart.map((item) =>
-                item.id === action.payload[0].id
+                item.id === action.payload[0]
                 ?
                 action.payload[1] === true
                     ?
@@ -49,6 +57,11 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             localStorage.setItem('cart', JSON.stringify(state.cart));
             return {
                 ...state, cart: [...state.cart],
+            }
+        case EMPTY_CART:
+            localStorage.setItem('cart', []);
+            return {
+                ...state, cart: [],
             }
         default:
             return state;
