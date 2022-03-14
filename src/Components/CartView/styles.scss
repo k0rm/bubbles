@@ -1,68 +1,72 @@
+@use "../../Styles/variables";
+
 .cartItem {
     display: flex;
     flex-direction: row;
-    height: 50px;
+    height: 100px;
     width: fit-content;
-    border-left: 5px solid black;
+    font-size: 24px;
+    border-bottom: 4px solid variables.$thirdary;
     
     .cartName {
-        border-bottom: 5px solid black;
         display: flex;
         width: 350px;
         justify-content: center;
         align-items: center;
-        padding: 0px 10px 0px 10px;
-        border-left: 5px solid black;
-        border-right: 5px solid black;
+        font-weight: bold;
+        color: variables.$primary;
     }
 
     .cartImg {
-        border-bottom: 5px solid black;
         padding: 0px 10px 0px 10px;
         .cI {
-            height: 50px;
-            width: 50px;
+            height: 75px;
+            width: 75px;
         }
     }
 
     .cartPrice {
-        border-bottom: 5px solid black;
         width: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0px 10px 0px 10px;
+        font-weight: bold;
+        color: variables.$primary;
     }
 
     .cartQuantity {
-        border-right: 5px solid black;
-        border-bottom: 5px solid black;
         width: 50px;
-        border-left: 5px solid black;
         display: flex;
+        font-weight: bold;
         align-items: center;
+        color: variables.$primary;
+        border-left: 4px solid variables.$thirdary;
         justify-content: center;
         padding: 0px 10px 0px 10px;
     }
 
-    .incr {
-        background-color: lime;
-        color: white;
+    .amountTogglers {
         display: flex;
+        flex-direction: row;
         align-items: center;
-        border-bottom: 5px solid black;
-        padding: 0px 10px 0 10px;
-        cursor: pointer;
-    }
+        gap: 5px;
 
-    .decr {
-        background-color: red;
-        color: white;
-        display: flex;
-        border-left: 5px solid black;
-        border-bottom: 5px solid black;
-        align-items: center;
-        padding: 0px 10px 0 10px;
-        cursor: pointer;
+        .incr {
+            @include variables.amountToggler;
+            background-color: variables.$buttonGreen;
+        }
+
+        .incr:hover {
+            background-color: variables.$hoverGreen;
+        }
+        
+        .decr {
+            @include variables.amountToggler;
+            background-color: red;
+        }
+
+        .decr:hover {
+            background-color: rgb(201, 59, 59);
+        }
     }
 }

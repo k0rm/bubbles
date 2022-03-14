@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.scss';
 import { useDispatch } from 'react-redux';
 import { emptyCart } from '../../Actions/cartAction';
+import { Link } from 'react-router-dom';
 
 const CartOptions = () => {
     const dispatch = useDispatch();
@@ -11,11 +12,14 @@ const CartOptions = () => {
             <div className="cOption empty" onClick={() => dispatch(emptyCart())}>
                 Empty Cart
             </div>
-            <div className="cOption checkout">
-                Checkout
-            </div>
+            <Link className='linky' to="/cart/checkout">
+                <div className="cOption checkout">
+                    Checkout
+                </div>
+            </Link>
         </div>
     )
 }
+
 
 export default CartOptions;

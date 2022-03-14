@@ -1,0 +1,30 @@
+@use '../../Styles/variables';
+
+.rcContainer {
+    display: flex;
+    flex-direction: column;
+    // border: 2px solid blue;
+    padding: 3em;
+
+    div {
+        padding-left: 2em;
+    }
+
+    span {
+        font-size: 18px;
+        font-weight: bold;
+        color: variables.$thirdary;
+    }
+
+    .rcSuffix {
+        color: variables.$primary;
+        padding-left: 2px;
+    }
+
+    .rcInfo {
+        font-weight: normal;
+        color: black;
+        padding-left: 10px;
+        font-weight: bold;
+    }    
+}

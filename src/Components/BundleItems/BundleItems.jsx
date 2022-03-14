@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'; 
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const BundleItems = ({ id, total }) => {
@@ -32,5 +33,15 @@ const BundleItems = ({ id, total }) => {
         </div>
     )
 }
+
+BundleItems.propTypes = {
+    product: PropTypes.arrayOf(
+        PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired
+    })
+    )
+};
 
 export default BundleItems;

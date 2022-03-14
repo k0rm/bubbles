@@ -6,14 +6,24 @@
     align-items: center;
     width: 400px;
     justify-content: space-evenly;
+    color: variables.$primary;
+    background-color: white;
+    padding: 5px;
+    border-bottom: 2px solid variables.$thirdary;
 
     .bundleLinky {
         display: flex;
         width: 400px;
         justify-content: space-around;
         text-decoration: none;
+        align-items: center;
         color: white;
+        color: variables.$primary;
+    }
 
+    .bundleLinky:hover {
+        background-color: variables.$thirdary;
+        color: white;
     }
 
     .bItemName {

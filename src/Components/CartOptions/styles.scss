@@ -10,19 +10,12 @@
     font-weight: bold;
 
     .cOption {
-        display: inherit;
-        justify-content: center;
-        align-items: center;
-        border-radius: 6px;
-        width: 150px;
-        height: 50px;
-        color: white;
-        cursor: pointer;
-        background-color: blueviolet;
+        @include variables.defaultButton;
+        background-color: variables.$primary;
     }
 
     .cOption:hover {
-        background-color: purple;
+        background-color: variables.$thirdary;
     }
 
 }

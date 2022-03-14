@@ -1,0 +1,67 @@
+@use "../../Styles/variables";
+
+
+.methodContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        gap: 1em;
+
+        .fiBox {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .errorMsg {
+            position: absolute;
+            padding-top: 5px;
+            padding-left: 230px;
+            color: red;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            // width: 500px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        input {
+            width: 200px;
+            font-size: 16px;
+            font-weight: bold;
+            height: 40px;
+            padding-left: 10px;
+            border: 1px solid variables.$primary;
+            border-radius: 2px;
+        }
+
+        input:focus {
+            outline: 1px solid variables.$primary;
+            border-color: variables.$primary;
+        }
+
+        .dSubmitter {
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: variables.$primary;
+            border-radius: 3px;
+            margin-left: 10px;
+            padding: 0;
+            color: white;
+            font-weight: bold;
+            border-color: variables.$primaryhover;
+        }
+
+    }
+}

@@ -1,13 +1,19 @@
 import React from 'react';
 import './styles.scss';
 
-const ProductAddedModal = () => {
+const ProductAddedModal = ({ isOpen }) => {
 
-    return (
-        <div className="pamContainer">
+    if (isOpen) {
+        return (
+            <div className="pamContainer">
             Product added to cart!
         </div>
     )
+} else {
+    return (
+        <></>
+    )
+}
 }
 
 export default ProductAddedModal;

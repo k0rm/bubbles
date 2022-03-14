@@ -1,4 +1,5 @@
 $primary: #a0c4ff;
+$primaryhover: #bfd8ff;
 $secondary: #9bf6ff;
 $thirdary: #bdb2ff;
 $background: #fffffc;
@@ -17,4 +18,46 @@ $hoverGreen: #86d58d;
     width: 150px;
     color: white;
     background-color: $buttonGreen;
+}
+
+@mixin checkoutButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 60px;
+    letter-spacing: 1px;
+    width: 200px;
+    color: white;
+    background-color: $primary;
+}
+
+@mixin amountToggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 35px;
+    width: 50px;
+    color: white;
+    background-color: $primary;
+}
+
+@mixin confirmButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    height: 60px;
+    width: 150px;
+    color: white;
+    letter-spacing: 2px;
+    background-color: $primary;
 }

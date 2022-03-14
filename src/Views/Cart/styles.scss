@@ -1,8 +1,43 @@
+@use "../../Styles/variables";
+
 .cartContainer {
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 100vh;
-    // gap: 2em;
+
+
+    .cartTotal {
+        color: variables.$thirdary;
+        font-size: 24px;
+        font-weight: bold;
+        padding-top: 1em;
+
+        .cartSpace {
+            color: variables.$primary
+        }
+        
+        .cartTotalAmount {
+            color: variables.$primary;
+        }
+
+        .cartDollar {
+            padding-left: 10px;
+            color: variables.$thirdary;
+        }
+    }
+}
+
+.emptyCartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: variables.$primary;
+    height: 100vh;
+    font-size: 48px;
+
+    span {
+        color: variables.$thirdary;
+    }
 }

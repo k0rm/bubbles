@@ -1,0 +1,24 @@
+@use "../../Styles/variables";
+
+.checkoutOptionsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .coButtons {
+        display: flex;
+        flex-direction: row;    
+        gap: 2em;
+        padding-top: 3em;
+
+        div {
+            @include variables.checkoutButtons;
+        }
+
+        div:hover {
+            background-color: variables.$primaryhover;
+        }
+    }
+}

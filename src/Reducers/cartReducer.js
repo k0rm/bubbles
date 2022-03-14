@@ -13,13 +13,18 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             let pload = 
                 {"id": action.payload.id, "name": action.payload.name, "description": action.payload.description, 
                 "image": action.payload.image, "price": action.payload.price, "qty": 1};
-            console.log(state);
             try {
-            let contains = (state.cart).length > 0 ?
-                state.cart.map((item) => item.id === action.payload.id ? true : false)
-                :
-                false
-            state.cart = contains[contains.length-1]
+            // let contains = state.cart.length > 0 ?
+            //     state.cart.map((item) => item.id === action.payload.id ? true : false)
+            //     :
+            //     false
+            let contains = false;
+            state.cart.forEach((item) => {
+                if (item.id === action.payload.id) {
+                    contains = true;
+                }
+            })
+            state.cart = contains
                 ?
                 state.cart.map((item) => item.id === action.payload.id 
                     ?
@@ -33,7 +38,6 @@ export default function cartReducer(state = INITIAL_STATE, action) {
                     ...state, cart: [],
                 }
             }
-            console.log("ADDING TO LOCAL");
             localStorage.setItem('cart', JSON.stringify(state.cart));
             return {
                 ...state, cart: [...state.cart],

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 import BundleItems from '../BundleItems/BundleItems';
 
@@ -10,7 +11,6 @@ const BundleCard = ({ id, items, name }) => {
     const accumulate = (cost) => {
         costy += cost;
         setTotal(costy);
-        console.log(total);
     }
     
     return (
@@ -37,6 +37,12 @@ const BundleCard = ({ id, items, name }) => {
             </div>
         </div>
     )
+}
+
+BundleCard.propTypes = {
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired
 }
 
 export default BundleCard;

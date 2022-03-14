@@ -1,0 +1,40 @@
+@use "../../Styles/variables";
+
+
+.rcCartContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 4px solid variables.$thirdary;
+    align-items: center;
+    width: 500px;
+
+    .rcItemName {
+        font-weight: bold;
+        font-size: 20px;
+        color: variables.$primary;
+    }
+
+    .rcItemImage {
+
+        .rcIi {
+            height: 100px;
+            width: 100px;
+        }
+    }
+
+    .rcItemQty {
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .rcItemQtyIncrease {
+        @include variables.amountToggler;
+    }
+
+    .rcItemQtyDecrease {
+        @include variables.amountToggler;
+    }
+
+
+}

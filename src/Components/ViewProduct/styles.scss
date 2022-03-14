@@ -24,11 +24,18 @@
     .vpB {
         font-size: 20px;
         font-weight: bold;
+        width: 500px;
     }
 
     .vpF {
+        padding-top: 2em;
+        color: variables.$primary;
         font-size: 20px;
         font-weight: bold;
+
+        span {
+            color: variables.$thirdary;
+        }
     }
 }
 

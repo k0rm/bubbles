@@ -1,0 +1,82 @@
+@use '../../../Styles/variables';
+
+.cartReviewContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .reviewOrder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            font-weight: bold;
+            font-size: 2.6rem;
+            margin-bottom: 1em;
+            color: variables.$primary;
+            border-bottom: 5px solid variables.$thirdary;
+        }
+
+        .reviewOrderTotal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: right;
+            font-weight: bold;
+            padding-top: 1em;
+
+
+            .totalText {
+                color: variables.$primary;
+                font-size: 22px;
+            }
+            
+            .totalSpacer {
+                color: variables.$thirdary;
+            }
+            
+            .totalDollarSign {
+                color: variables.$thirdary;
+            }
+
+            .reviewTotalValue {
+                color: black;
+                font-size: 24px;
+                font-weight: bold;
+                padding-left: 10px;
+            }
+        }
+
+    }
+
+    .reviewInfo {
+        top: 0;
+        right: 0;
+        margin-top: 15rem;
+        margin-right: 15rem;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 5em;
+        align-items: center;
+
+        h2 {
+            color: variables.$primary;
+            border-bottom: 5px solid variables.$thirdary;
+        }
+    }
+
+    .reviewConfirmOrder {
+        @include variables.confirmButton;
+        margin-top: 1em;
+    }
+
+    .reviewConfirmOrder:hover {
+        background-color: variables.$thirdary;
+    }
+}

@@ -5,3 +5,6 @@ export const ADD_CART = "ADD_CART";
 export const GET_CART = "GET_CART";
 export const ADJUST_CART = "ADJUST_CART";
 export const EMPTY_CART = "EMPTY_CART";
+export const ADD_CUSTOMER = "ADD_CUSTOMER";
+export const GET_CUSTOMER = "GET_CUSTOMER";
+export const CONFIRM_ORDER = "CONFIRM_ORDER";

@@ -32,7 +32,7 @@ const Bundles = () => {
        return (
            <div className="bundleContainer">
                <h3>
-                   SMErlrororo
+                   No bundles
                </h3>
            </div>
        )

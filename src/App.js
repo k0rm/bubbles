@@ -8,6 +8,9 @@ import Product from './Views/Product/Product';
 import Bundles from './Views/Bundles/Bundles';
 import AboutUs from './Views/AboutUs/AboutUs';
 import Cart from './Views/Cart/Cart';
+import CartCheckout from './Views/Cart/CartCheckout/CartCheckout';
+import CartReview from './Views/Cart/CartReview/CartReview';
+import CartConfirmation from './Views/Cart/CartConfirmation/CartConfirmation';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path="/bundles" element={<Bundles />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/cart/checkout" element={<CartCheckout />} />
+          <Route path="/cart/checkout/review/" element={<CartReview />} />
+          <Route path="/cart/checkout/confirmed" element={<CartConfirmation />} />
         </Routes>
       </div>
     </Router>

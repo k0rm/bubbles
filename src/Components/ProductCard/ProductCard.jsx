@@ -1,9 +1,8 @@
 import React from 'react';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 const ProductCard = (props) => {
-
-    console.log("Herlo");
 
     return (
         <div className="cardContainer">
@@ -23,6 +22,15 @@ const ProductCard = (props) => {
             </div>
         </div>
     )
+}
+
+ProductCard.propTypes = {
+    props: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+    }).isRequired
 }
 
 export default ProductCard;
