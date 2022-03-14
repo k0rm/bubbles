@@ -25,11 +25,11 @@ const ProductCard = (props) => {
 }
 
 ProductCard.propTypes = {
-    props: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
+    props: PropTypes.shape({ // Product json
+        name: PropTypes.string.isRequired, // Name should be a string
+        image: PropTypes.string.isRequired, // Image url should be a string
+        description: PropTypes.string.isRequired, // Description should be a string
+        price: PropTypes.number.isRequired, // Price should be a integer
     }).isRequired
 }
 

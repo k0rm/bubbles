@@ -17,6 +17,7 @@ const BundleItems = ({ id, total }) => {
             .catch(console.error);
     }, [id]);
 
+
     return (
         <div className="bundleItemsContainer">
             <Link className='bundleLinky' to={`/products/${product.id}`}>
@@ -35,11 +36,11 @@ const BundleItems = ({ id, total }) => {
 }
 
 BundleItems.propTypes = {
-    product: PropTypes.arrayOf(
+    product: PropTypes.arrayOf( // Array of Product ID's
         PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired
+        name: PropTypes.string.isRequired, // Name of a product
+        image: PropTypes.string.isRequired, // Url of a product
+        price: PropTypes.number.isRequired // Price of product
     })
     )
 };

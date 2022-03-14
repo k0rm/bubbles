@@ -20,7 +20,7 @@ const Products = () => {
         dispatch(addToCart(item))
         setTimeout(() => {
             setAdderModal(false);
-        }, 3000)
+        }, 1000)
         
     }
 

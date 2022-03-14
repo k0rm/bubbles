@@ -27,10 +27,10 @@ const ReviewCart = ({ item, total }) => {
 
 ReviewCart.propTypes = {
     item: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        qty: PropTypes.number.isRequired,
-        price: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired, // name should be a string
+        image: PropTypes.string.isRequired, // image url should be a string
+        qty: PropTypes.number.isRequired, // Quantity should be a integer
+        price: PropTypes.number.isRequired, // Price should be a integer.
     }).isRequired
 }
 

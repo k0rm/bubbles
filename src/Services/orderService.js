@@ -1,5 +1,6 @@
-const sendOrder = async (jsonData) => {
-    const res = await fetch("http://localhost:3500/api/orders/1", {
+const sendOrder = async (jsonData, suffix) => {
+    console.log(suffix);
+    const res = await fetch("http://localhost:3500/api/orders/"+suffix, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",

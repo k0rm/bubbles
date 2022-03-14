@@ -16,7 +16,8 @@ const CheckoutOptions = ({ selection }) => {
 }
 
 CheckoutOptions.propTypes = {
-    selection: PropTypes.func.isRequired,
+    // Selection to select between options should be a number
+    selection: PropTypes.func.isRequired, 
 }
 
 export default CheckoutOptions;

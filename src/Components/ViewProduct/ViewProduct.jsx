@@ -33,6 +33,7 @@ const ViewProduct = ({ props }) => {
 }
 
 ViewProduct.propTypes = {
+    // Props should be an array or object before and after fetch
     props: PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.object

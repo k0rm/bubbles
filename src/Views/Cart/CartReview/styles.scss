@@ -5,7 +5,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 100%;
 
     .reviewOrder {
         display: flex;
@@ -56,8 +58,8 @@
     .reviewInfo {
         top: 0;
         right: 0;
-        margin-top: 15rem;
-        margin-right: 15rem;
+        margin-top: 10rem;
+        margin-right: 10rem;
         position: absolute;
         display: flex;
         justify-content: center;

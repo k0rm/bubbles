@@ -53,6 +53,7 @@ const ReviewCustomer = ({ customer }) => {
 }
 
 ReviewCustomer.propTypes = {
+    // Customer from localStorage should be a list of strings or integers
     customer: PropTypes.arrayOf(PropTypes.string, PropTypes.number).isRequired
 }
 

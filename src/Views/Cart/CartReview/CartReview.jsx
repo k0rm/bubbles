@@ -34,7 +34,14 @@ const CartReview = () => {
             "total": total
         }
 
-        dispatch(confirmOrder(data));
+        let suffix;
+        if (customer.length < 4) {
+            suffix = customer[2];
+        } else {
+            suffix = customer[4]
+        }
+
+        dispatch(confirmOrder(data, suffix));
         dispatch(emptyCart());
         localStorage.setItem('customer', customer);
         navigate("/cart/checkout/confirmed", { replace: true});

@@ -2,10 +2,10 @@ import { CONFIRM_ORDER } from "../Constants";
 
 import orderService from '../Services/orderService';
 
-export const confirmOrder = (data) => {
+export const confirmOrder = (data, suffix) => {
     return async (dispatch) => {
         try {
-            const res = await orderService(data);
+            const res = await orderService(data, suffix);
             dispatch(confirmOrderSuccess(res));
         } catch (error) {
             return error;

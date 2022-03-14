@@ -58,6 +58,7 @@ export default function cartReducer(state = INITIAL_STATE, action) {
                     {...item, qty: item.qty - 1}
                 :
                 item)
+            state.cart = state.cart.filter((item) => item.qty > 0);
             localStorage.setItem('cart', JSON.stringify(state.cart));
             return {
                 ...state, cart: [...state.cart],

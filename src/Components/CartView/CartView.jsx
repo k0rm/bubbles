@@ -40,13 +40,13 @@ const CartView = ({id, name, image, description, price, qty, total}) => {
 }
 
 CartView.propTypes = {
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    qty: PropTypes.number.isRequired,
-    total: PropTypes.func.isRequired,
+    id: PropTypes.number.isRequired, // Product ID should be number
+    name: PropTypes.string.isRequired, // Product Name should be string
+    image: PropTypes.string.isRequired, // Image url should be a string
+    description: PropTypes.string.isRequired, // Description should be a string
+    price: PropTypes.number.isRequired, // Price should be an integer
+    qty: PropTypes.number.isRequired, // Quantity should be an integer
+    total: PropTypes.func.isRequired, // Total should be an integer.
 }
 
 export default CartView;

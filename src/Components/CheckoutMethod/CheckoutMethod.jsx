@@ -170,7 +170,7 @@ const CheckoutMethod = ({ method }) => {
 
 
 CheckoutMethod.propTypes = {
-    method: PropTypes.number.isRequired,
+    method: PropTypes.number.isRequired, // Selector Method should be an integer
 }
 
 export default CheckoutMethod;
